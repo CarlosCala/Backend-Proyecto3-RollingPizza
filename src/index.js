@@ -1,17 +1,36 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import  express  from "express";
+import morgan from "morgan";
+import cors from "cors";
+import './config/database'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+//instancia de express
+const app = express();
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+//crear un puerto
+app.set('port', process.env.PORT || 4000);
+
+app.listen(app.get('port'), ()=> {
+     console.log("**************");
+     console.log("estoy en el puerto " + app.get('port') );
+     console.log("**************");
+});
+//middlewares
+app.use(morgan('dev'));
+app.use(cors());
+
+app.use(express.json());
+app.use(express.urlencoded({extended: true }))
+
+app.use(express.static('public'));
+
+//rutas
+
+app.get('/', (req,res)=>{
+    res.send('esto es una prueba desde el backend')
+});
+
+app.delete('/borrar', (req,res)=>{
+    res.send('se borro algo')
+});
+
+
