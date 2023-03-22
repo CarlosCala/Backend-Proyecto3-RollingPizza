@@ -19,7 +19,6 @@ const login = async (req, res) => {
 
     // const token = await generateJTW(user._id, user.name)
 
-
     // si el password y el mail son correctos
     res.status(200).json({
       message: "user name and email correct",
@@ -61,7 +60,7 @@ const register = async (req, res) => {
       message: "user successfully created",
       userName: createdUser.name,
       uid: createdUser._id,
-      // token 
+      // token
     });
   } catch (error) {
     console.log(error);
