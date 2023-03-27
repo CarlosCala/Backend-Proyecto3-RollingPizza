@@ -22,7 +22,9 @@
   },
   "scripts": {
     "start": "babel-node src/index.js",
+    "build": "react-scripts build",
     "dev": "nodemon --exec babel-node src/index.js"
+
   },
   "eslintConfig": {
     "extends": [
