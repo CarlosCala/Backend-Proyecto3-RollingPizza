@@ -62,6 +62,7 @@ const updateProduct = async (req, res) => {
   try {
     //buscamos el producto por el id y lo actualizo con los datos que nos llegan del body req
     await Product.findByIdAndUpdate(req.params.id, req.body);
+    console.log(req.params.id);
     res.status(200).json({ message: "Product updated successfully" });
   } catch (error) {
     console.log(error);
