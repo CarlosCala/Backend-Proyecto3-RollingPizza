@@ -14,6 +14,10 @@ const productSchema = new Schema({
     min: 0, // no permiote valores negativos,
     max: 10000, // checkear con el front
   },
+  description:{
+    require: true,
+    type: String,
+  },
   urlImg: {
     require: true,
     type: String,
