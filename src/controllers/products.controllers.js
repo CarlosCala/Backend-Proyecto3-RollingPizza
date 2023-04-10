@@ -18,6 +18,7 @@ const createProduct = async (req, res) => {
     const newProduct = new Product({
       productName,
       price,
+      description,
       urlImg,
       category,
     });
