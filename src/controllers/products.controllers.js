@@ -13,7 +13,7 @@ const showProducts = async (req, res) => {
 
 const createProduct = async (req, res) => {
   try {
-    const { productName, price, urlImg, category } = req.body;
+    const { productName, price,description, urlImg, category } = req.body;
     // crear un objeto para guardarlo en la bd
     const newProduct = new Product({
       productName,
