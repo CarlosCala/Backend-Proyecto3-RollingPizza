@@ -2,12 +2,10 @@
 import mongoose, { Schema } from "mongoose";
 
 const orderSchema = new Schema({
-  productName: {
-    require: true,
-    type: String,
-    minlenght: 2,
-    maxlenght: 100,
-  },
+  order: [{
+    productName : String,
+    price: Number,
+  }],
   price: {
     type: Number,
     require: true,
