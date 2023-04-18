@@ -19,10 +19,15 @@ const orderSchema = new Schema({
     require: true,
     default: 1,
   },
+  email: {
+    type: String,
+    require: true,
+  },
   delivery: {
     type: String,
     default: "pending",
   },
+
 });
 
 const Order = mongoose.model("order", orderSchema);
