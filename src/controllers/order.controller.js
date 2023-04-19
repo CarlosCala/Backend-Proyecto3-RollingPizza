@@ -13,7 +13,7 @@ const showOrders = async (req, res) => {
 
 const createOrder = async (req, res) => {
   try {
-    const { productName, price, quantity, email, delivery } = req.body;
+    const { productName, price, quantity, email, delivery,total } = req.body;
     // crear un objeto para guardarlo en la bd
     const newOrder = new Order({
       productName,
