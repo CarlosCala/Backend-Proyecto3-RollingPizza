@@ -2,7 +2,6 @@ import Order from "../models/order";
 
 const showOrders = async (req, res) => {
   try {
-    //obtener un array con los productos guardado en mi bd
     const orderList = await Order.find();
     res.status(200).json(orderList);
   } catch (error) {
@@ -13,8 +12,7 @@ const showOrders = async (req, res) => {
 
 const createOrder = async (req, res) => {
   try {
-    const { productName, price, quantity, email, delivery } = req.body;
-    // crear un objeto para guardarlo en la bd
+    const { productName, price, quantity, email, delivery,total } = req.body;
     const newOrder = new Order({
       productName,
       price,
@@ -22,7 +20,6 @@ const createOrder = async (req, res) => {
       email,
       delivery,
     });
-    // guardar en la base de datos
 
     await newOrder.save();
     res.status(201).json({ mesagge: "Order sent succesfully" });

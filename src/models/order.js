@@ -2,10 +2,12 @@
 import mongoose, { Schema } from "mongoose";
 
 const orderSchema = new Schema({
-  order: [{
-    productName : String,
-    price: Number,
-  }],
+  productName: {
+    require: true,
+    type: String,
+    minlenght: 2,
+    maxlenght: 100,
+  },
   price: {
     type: Number,
     require: true,
@@ -24,8 +26,7 @@ const orderSchema = new Schema({
   delivery: {
     type: String,
     default: "pending",
-  },
-
+  }
 });
 
 const Order = mongoose.model("order", orderSchema);
