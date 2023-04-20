@@ -2,27 +2,11 @@
 import mongoose, { Schema } from "mongoose";
 
 const orderSchema = new Schema({
-  productName: {
-    require: true,
-    type: String,
-    minlenght: 2,
-    maxlenght: 100,
-  },
-  price: {
-    type: Number,
-    require: true,
-    min: 0,
-    max: 10000,
-  },
-  quantity: {
-    type: Number,
-    require: true,
-    default: 1,
-  },
-  email: {
-    type: String,
-    require: true,
-  },
+  order : [{
+    productName: String,
+    email: String,
+    price: Number,
+  }],
   delivery: {
     type: String,
     default: "pending",
