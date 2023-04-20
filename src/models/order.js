@@ -2,11 +2,11 @@
 import mongoose, { Schema } from "mongoose";
 
 const orderSchema = new Schema({
-  order : [{
+  order : {
     productName: String,
     email: String,
     price: Number,
-  }],
+  },
   delivery: {
     type: String,
     default: "pending",
