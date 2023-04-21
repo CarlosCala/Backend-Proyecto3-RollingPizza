@@ -12,9 +12,12 @@ const showOrders = async (req, res) => {
 
 const createOrder = async (req, res) => {
   try {
-    const { order, delivery } = req.body;
+    const { productName, price, quantity, email, delivery } = req.body;
     const newOrder = new Order({
-      order ,
+      productName,
+      price,
+      quantity,
+      email,
       delivery
     });
 

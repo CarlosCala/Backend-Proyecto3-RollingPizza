@@ -2,10 +2,20 @@
 import mongoose, { Schema } from "mongoose";
 
 const orderSchema = new Schema({
-  order : {
-    productName: String,
-    email: String,
-    price: Number,
+  productName: {
+    type: String,
+    required: true
+  },
+  price: {
+    type: Number,
+    required: true
+  },
+  quantity: {
+    type: Number
+  },
+  email: {
+    type: String,
+    required: true
   },
   delivery: {
     type: String,
