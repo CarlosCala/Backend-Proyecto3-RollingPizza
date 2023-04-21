@@ -4,12 +4,18 @@ import mongoose, { Schema } from "mongoose";
 const orderSchema = new Schema({
   order : [{
     productName: String,
-    email: String,
     price: Number,
   }],
+  email: {
+    type: String,
+    require: true,
+  },
   delivery: {
     type: String,
     default: "pending",
+  },
+  total : {
+    type: Number,
   }
 });
 

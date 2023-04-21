@@ -12,13 +12,12 @@ const showOrders = async (req, res) => {
 
 const createOrder = async (req, res) => {
   try {
-    const { productName, price, quantity, email, delivery } = req.body;
+    const { order, email, delivery,total } = req.body;
     const newOrder = new Order({
-      productName,
-      price,
-      quantity,
+      order,
       email,
-      delivery
+      delivery,
+      total
     });
 
     await newOrder.save();
