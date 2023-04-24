@@ -2,27 +2,21 @@
 import mongoose, { Schema } from "mongoose";
 
 const orderSchema = new Schema({
-  productName: {
-    require: true,
+  order : [{
+    productName: String,
+    price: Number,
+  }],
+  email: {
     type: String,
-    minlenght: 2,
-    maxlenght: 100,
-  },
-  price: {
-    type: Number,
     require: true,
-    min: 0,
-    max: 10000,
-  },
-  quantity: {
-    type: Number,
-    require: true,
-    default: 1,
   },
   delivery: {
     type: String,
     default: "pending",
   },
+  total : {
+    type: Number,
+  }
 });
 
 const Order = mongoose.model("order", orderSchema);

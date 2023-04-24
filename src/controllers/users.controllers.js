@@ -63,6 +63,7 @@ const login = async (req, res) => {
       message: "user name and email correct",
       userName: user.name,
       uid: user._id,
+      email: user.email,
       token,
       admin: user.admin
     });
