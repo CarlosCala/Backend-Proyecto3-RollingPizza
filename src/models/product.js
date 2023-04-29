@@ -11,8 +11,8 @@ const productSchema = new Schema({
   price: {
     type: Number,
     require: true,
-    min: 0, // no permiote valores negativos,
-    max: 10000, // checkear con el front
+    min: 0, 
+    max: 10000, 
   },
   description:{
     require: true,
@@ -27,8 +27,7 @@ const productSchema = new Schema({
     require: true,
   },
 });
-// para poder usar le indicamos a mongoose que cree
-// un modelo basado en este esquema
+
 const Product = mongoose.model("product", productSchema);
 
 export default Product;
