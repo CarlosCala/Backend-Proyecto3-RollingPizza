@@ -3,9 +3,7 @@ import jwt from "jsonwebtoken";
 const generateJTW = (uid, name) => {
   //devuelve una promesa
   return new Promise((resolve, reject) => {
-    //resolve + // reject -
 
-    //agregar los datos al payload
     const payload = { uid, name };
 
     //fimar el token
@@ -15,7 +13,7 @@ const generateJTW = (uid, name) => {
       { expiresIn: "2h" },
       (err, token) => {
         if (err) {
-          console.log(err);
+          console.error(err);
           reject("error generating token");
         }
         resolve(token);
